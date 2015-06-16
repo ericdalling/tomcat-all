@@ -36,8 +36,8 @@ end
 ruby_block 'Set TOMCAT_HOME in /etc/environment' do
   block do
     file = Chef::Util::FileEdit.new('/etc/environment')
-    file.insert_line_if_no_match(/^TOMCAT_HOME=/, "JAVA_HOME=#{node['tomcat-all']['tomcat_home']}")
-    file.search_file_replace_line(/^TOMCAT_HOME=/, "JAVA_HOME=#{node['tomcat-all']['tomcat_home']}")
+    file.insert_line_if_no_match(/^TOMCAT_HOME=/, "TOMCAT_HOME=#{node['tomcat-all']['tomcat_home']}")
+    file.search_file_replace_line(/^TOMCAT_HOME=/, "TOMCAT_HOME=#{node['tomcat-all']['tomcat_home']}")
     file.write_file
     only_if { node['tomcat-all']['set_etc_environment'] }
   end
