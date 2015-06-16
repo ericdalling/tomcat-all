@@ -33,7 +33,7 @@ configured with the bellow default settings if no other settings is provided.
 
 * `['tomcat-all']['version'] = '7.0.53'` - Tomcat's version to be installed
 
-* `['tomcat-all']['install_directory'] = '/opt'` - The root directory where tomcat will be installed.
+* `['tomcat-all']['tomcat_home'] = '/opt'` - The root directory where tomcat will be installed.
  Bellow this directory this recipe will create a symlink tomcat and extract to a folder called 'tomcat-#{version}).
  Example: creates `/opt/tomcat` as a symbolic link to `/opt/tomcat-7.0.53` (tomcat actual folder)
 
